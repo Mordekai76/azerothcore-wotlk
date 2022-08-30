@@ -173,9 +173,9 @@ public:
     void OnBeforeConfigLoad(bool reload) override
     {
         if (!reload) {
-            SUMMON_CHEST = sConfigMgr->GetIntDefault("ChestID", 179697);
-            KillAnnounce = sConfigMgr->GetIntDefault("KillAnnounce", 1);
-            chest_despawn = sConfigMgr->GetIntDefault("ChestTimer", 120);
+            SUMMON_CHEST = sConfigMgr->GetOption<int32>("ChestID", 179697);
+            KillAnnounce = sConfigMgr->GetOption<int32>("KillAnnounce", 1);
+            chest_despawn = sConfigMgr->GetOption<int32>("ChestTimer", 120);
             spawnchestIP = sConfigMgr->GetOption<bool>("spawnchestIP", true);
         }
     }
