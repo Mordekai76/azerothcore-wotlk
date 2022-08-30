@@ -22,7 +22,7 @@ public:
 
     void OnPlayerKilledByCreature(Creature* killer, Player* killed)
     {
-        if (!sConfigMgr->GetBoolDefault("PvPChest", true))
+        if (!sConfigMgr->GetOption<bool>("PvPChest", true))
             return;
 
         if (!killer->IsPet())
@@ -99,7 +99,7 @@ public:
 
     void OnPVPKill(Player* killer, Player* killed)
     {
-        if (!sConfigMgr->GetBoolDefault("PvPChest", true))
+        if (!sConfigMgr->GetOption<bool>("PvPChest", true))
             return;
 
         std::string name = killer->GetName();
@@ -176,7 +176,7 @@ public:
             SUMMON_CHEST = sConfigMgr->GetIntDefault("ChestID", 179697);
             KillAnnounce = sConfigMgr->GetIntDefault("KillAnnounce", 1);
             chest_despawn = sConfigMgr->GetIntDefault("ChestTimer", 120);
-            spawnchestIP = sConfigMgr->GetBoolDefault("spawnchestIP", true);
+            spawnchestIP = sConfigMgr->GetOption<bool>("spawnchestIP", true);
         }
     }
 };
